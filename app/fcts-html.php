@@ -82,10 +82,11 @@ function HTMLInsertMenu()
  * @param string $app_name 
  * @param string $app_version 
  * @param string $app_update 
+ * @param string $app_title 
  * @param string $app_author 
  * @return void 
  */
-function HTMLInsertFooter($app_name = APP_NAME, $app_version = APP_VERSION, $app_update = APP_DATE_UPDATE, $app_title = APP_TITLE)
+function HTMLInsertFooter($app_name = APP_NAME, $app_version = APP_VERSION, $app_update = APP_DATE_UPDATE, $app_title = APP_TITLE, $app_author = APP_AUTEUR)
 {
     echo <<<HTML
     <footer class="appFooter">
@@ -93,7 +94,7 @@ function HTMLInsertFooter($app_name = APP_NAME, $app_version = APP_VERSION, $app
             <div class="row">
                 <div class="col-12 text-center">
                     <hr>
-                    <p class="infoFooter">$app_name - $app_version - $app_update by $app_title</p>
+                    <p class="infoFooter">$app_name - $app_version - $app_update, $app_title by $app_author</p>
                 </div>
             </div>
         </div>
