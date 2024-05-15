@@ -83,7 +83,7 @@ $favoritedNotes = array_filter($sortedNotes, function ($note) {
                             $noteType = htmlspecialchars(NOTE_TYPES[$note['type']]);
                             $noteTitle = htmlspecialchars($note['title']);
                             $noteDate = htmlspecialchars($note['date']);
-                            $noteLink = 'view-note.php?file=' . urlencode($note['filename']); // Updated link
+                            $noteLink = 'view-note.php?file=' . urlencode($note['filename']);
                     ?>
                             <a href="<?php echo $noteLink; ?>" class="appNoteBox">
                                 <div class="row tuileNote" alt="Lire">
@@ -116,11 +116,14 @@ $favoritedNotes = array_filter($sortedNotes, function ($note) {
         <div class="row">
             <div class="col-12">
                 <?php foreach ($favoritedNotes as $note) : ?>
-                    <a href="index.php?page=view&file=<?php echo $note['filename']; ?>" class="appNoteBox">
+                    <?php
+                    $favoriteNoteLink = 'view-note.php?file=' . urlencode($note['filename']);
+                    ?>
+                    <a href="<?php echo $favoriteNoteLink; ?>" class="appNoteBox">
                         <div class="row tuileNote-mini" alt="Lire">
                             <div class="col-12">
                                 <span class="badge text-bg-secondary"><?php echo $note['type']; ?></span>
-                                <p class="mb-3 appMainColor"><?php echo $note['title']; ?></p>
+                                <h2 class="mb-3 appMainColor"><?php echo $note['title']; ?></h2>
                             </div>
                         </div>
                     </a>
@@ -128,6 +131,7 @@ $favoritedNotes = array_filter($sortedNotes, function ($note) {
             </div>
         </div>
         <!-- End of Affichage des favoris -->
+
 
     </div><!-- container -->
 

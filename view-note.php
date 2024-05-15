@@ -1,7 +1,5 @@
 <?php
-// *******************************************************
-// --                    CONTROLLER                     --
-// *******************************************************
+
 require 'conf.php';
 require 'app/fcts-tools.php';
 require 'app/fcts-html.php';
@@ -10,9 +8,6 @@ require 'app/fcts-app.php';
 $noteFile = $_GET['file'] ?? '';
 
 if (empty($noteFile)) {
-    // Handle the case where no note file is provided
-    // You can display an error message or redirect the user
-    // For example:
     header("Location: index.php");
     exit();
 }
@@ -20,9 +15,7 @@ if (empty($noteFile)) {
 $note = LOADNoteFromFile($noteFile);
 
 if (!$note) {
-    // Handle the case where the note file doesn't exist or couldn't be loaded
-    // For example:
-    echo "Note not found!";
+    echo "Note non trouvée!";
     exit();
 }
 
@@ -49,7 +42,8 @@ if (!$note) {
                 <hr>
                 <h6 class="mb-3 appMainColor"><span class=""><span class="badge"><?php echo htmlspecialchars($note['type']); ?></span></h6> 
                 <h6 class="mb-3 appMainColor"><span class=""><?php echo htmlspecialchars($note['date']); ?></span></h6>
-                <a href="index.php?page=editnote&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-success btn-sm btn-note-delete" title="Modifier"> Modifier </a>
+                <a href="edit-note.php?page=editnote&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-success btn-sm btn-note-delete" title="Modifier">Modifier</a>
+
                 <a href="index.php?page=confirm&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger btn-sm btn-note-delete" title="Supprimer"> Supprimer </a>                    
             </div>   
             <div class="col-1"></div> 
