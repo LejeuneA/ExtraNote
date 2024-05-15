@@ -43,6 +43,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
+<head>
+    <?php displayHeadSection('Accueil'); ?>
+</head>
+
     <?php echo HTMLInsertHeader(); ?>
 <body>
     <div class="container">        
