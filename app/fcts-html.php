@@ -20,7 +20,7 @@ function HTMLInsertHeader($title = APP_NAME)
     $head = '
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -46,7 +46,8 @@ function HTMLInsertBanner()
             <div class="col-12 text-center">      
             <a href="index.php"><h1>ExtraNote</h1></a>
             </div>
-        </div>        
+        </div>    
+        <hr>         
     ';
 
     echo $banner;
@@ -67,7 +68,7 @@ function HTMLInsertMenu()
         <div class="col-12 text-center d-flex align-items-center justify-content-center navbar">      
         <a href="index.php">Home</a> <a href="add-note.php?page=addnote">Ajouter</a>
         </div>
-        </div>        <hr>        
+        </div>    
         ';
 
     echo $navigation;
@@ -303,8 +304,8 @@ function HTMLAddNewNoteForm()
             <textarea name="content_note" id="content_note" class="form-control" placeholder="Content" rows="10" required></textarea>
         </div>
         <input type="hidden" name="action" value="addnote">
-        <button type="submit" class="btn btn-modify">Ajouter</button>
-        <a href="index.php" class="btn btn-delete">Annuler</a>
+        <button type="submit" class="btn btn-modify-dark">Ajouter</button>
+        <a href="index.php" class="btn btn-delete-dark">Annuler</a>
     </form>';
 }
 
@@ -361,8 +362,8 @@ function HTMLEditNote($note, $noteFile, $successMessage = null, $errorMessage = 
                 <input type="hidden" name="file_note" value="<?php echo htmlspecialchars($noteFile); ?>">
                 <input type="hidden" name="date_note" value="<?php echo htmlspecialchars($note['date']); ?>">
                 <!-- Submit and cancel buttons -->
-                <button type="submit" class="btn btn-outline-success">Modifier</button>
-                <a href="index.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger">Annuler</a>
+                <button type="submit" class="btn btn-modify-dark">Modifier</button>
+                <a href="index.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-delete-dark">Annuler</a>
             </form>
         </div>
     </div>

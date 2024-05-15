@@ -41,8 +41,8 @@ if (!$note) {
                     <strong><?php echo htmlspecialchars($note['title']); ?></strong>
                 </div>
                 <div>
-                    <a href="index.php?page=view&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-success">Annuler</a>
-                    <a href="delete.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger">Confirmer</a>
+                    <a href="index.php?page=view&file=<?php echo urlencode($noteFile); ?>" class="btn btn-modify-dark">Annuler</a>
+                    <a href="delete.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-delete-dark">Confirmer</a>
                 </div>
             </div>                     
         </div>
