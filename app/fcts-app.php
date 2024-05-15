@@ -12,7 +12,7 @@
  * ouvre les contenus de chaque note et les fusionne dans un tableau
  * 
  * @param string $directory 
- * @return array|empty
+ * 
  */
 function GETListAllNotes($directory = NOTES_DIR) {
     $files = glob($directory.'/*.json');    

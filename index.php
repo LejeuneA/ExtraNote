@@ -25,9 +25,7 @@ if (!empty($searchTerm)) {
 $favoritedNotes = array_filter($sortedNotes, function ($note) {
     return $note['favoris'] == 1;
 });
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -85,34 +83,34 @@ $favoritedNotes = array_filter($sortedNotes, function ($note) {
                             $noteType = htmlspecialchars(NOTE_TYPES[$note['type']]);
                             $noteTitle = htmlspecialchars($note['title']);
                             $noteDate = htmlspecialchars($note['date']);
-                            $noteLink = 'index.php?page=view&file=' . urlencode($note['filename']);
-                            echo <<<HTML
-                            <a href="$noteLink" class="appNoteBox">
+                            $noteLink = 'view-note.php?file=' . urlencode($note['filename']); // Updated link
+                    ?>
+                            <a href="<?php echo $noteLink; ?>" class="appNoteBox">
                                 <div class="row tuileNote" alt="Lire">
                                     <div class="col-12">
-                                        $isFavoris
-                                        <span class="badge text-bg-secondary">$noteType</span>
-                                        <h2 class="mb-3 appMainColor">$noteTitle</h2>
-                                        <small>$noteDate</small>
+                                        <?php echo $isFavoris; ?>
+                                        <span class="badge text-bg-secondary"><?php echo $noteType; ?></span>
+                                        <h2 class="mb-3 appMainColor"><?php echo $noteTitle; ?></h2>
+                                        <small><?php echo $noteDate; ?></small>
                                     </div>
                                 </div>
                             </a>
-                            HTML;
+                    <?php
                         }
                     } else {
-                        echo '<p>No notes found.</p>';
+                        echo '<p>Aucune note à afficher.</p>';
                     }
                     ?>
+
                 </div>
             </div>
         </div>
 
         <!-- Affichage des favoris -->
-        <!-- Affichage des favoris -->
         <hr>
         <div class="row">
             <div class="col-12">
-                <h1 class="mb-3 appMainColor appPageTitle">Favoris <img src="assets/img/section.png"></h1>
+                <h1 class="mb-3 appMainColor appPageTitle">Favoris <img src="assets/img/section.png" alt="section icon"></h1>
             </div>
         </div>
         <div class="row">
