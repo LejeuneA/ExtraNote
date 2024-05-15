@@ -21,7 +21,6 @@ if (!$note) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <?php echo HTMLInsertHeader(); ?>
@@ -35,7 +34,6 @@ if (!$note) {
         <?php echo HTMLInsertMenu(); ?>
 
         <!-- Affichage des notes -->
-
         <div class="row">               
             <div class="col-4 appViewNote">                    
                 <h1 class="mb-3 appMainColor appPageTitle"><?php echo htmlspecialchars($note['title']); ?></h1>  
@@ -44,7 +42,8 @@ if (!$note) {
                 <h6 class="mb-3 appMainColor"><span class=""><?php echo htmlspecialchars($note['date']); ?></span></h6>
                 <a href="edit-note.php?page=editnote&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-success btn-sm btn-note-delete" title="Modifier">Modifier</a>
 
-                <a href="index.php?page=confirm&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger btn-sm btn-note-delete" title="Supprimer"> Supprimer </a>                    
+                <!-- Link to delete confirmation page -->
+                <a href="confirm.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger btn-sm btn-note-delete" title="Supprimer">Supprimer</a>
             </div>   
             <div class="col-1"></div> 
             <div class="col-7 appViewNote">                     
@@ -53,9 +52,6 @@ if (!$note) {
                 </div>
             </div>              
         </div>
-
-
-
     </div><!-- container -->
 
     <!-- Footer -->

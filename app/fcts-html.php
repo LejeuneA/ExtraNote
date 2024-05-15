@@ -66,7 +66,7 @@ function HTMLInsertMenu()
 
         <div class="row">
         <div class="col-12 text-center">      
-        x <a href="index.php">Home</a> X <a href="index.php?page=addnote">Ajouter</a> x
+        x <a href="index.php">Home</a> X <a href="add-note.php?page=addnote">Ajouter</a> x
         </div>
         </div>        <hr>        
         ';

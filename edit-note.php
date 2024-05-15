@@ -36,9 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
     // Handle the update result
     if ($update_result) {
         $success_message = "Note updated successfully.";
-        displaySuccessMessage($success_message);
     } else {
-        echo "Failed to update note.";
+        $error_message = "Failed to update note.";
     }
 }
 
@@ -81,6 +80,8 @@ if (!$note) {
         </div>
         <div class="row">
             <div class="col-12">
+                <?php if(isset($success_message)) displaySuccessMessage($success_message); ?>
+                <?php if(isset($error_message)) echo '<div class="alert alert-danger" role="alert">' . $error_message . '</div>'; ?>
                 <!-- Edit Note Form -->
                 <form id="form_edit_note" action="edit-note.php" method="post">
                     <div class="mb-3 form-group">
@@ -109,7 +110,7 @@ if (!$note) {
                     <input type="hidden" name="date_note" value="<?php echo htmlspecialchars($note['date']); ?>">
                     <!-- Submit and cancel buttons -->
                     <button type="submit" class="btn btn-outline-success">Modifier</button>
-                    <a href="index.php?page=view&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger">Annuler</a>
+                    <a href="index.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger">Annuler</a>
                 </form>
             </div>
         </div>

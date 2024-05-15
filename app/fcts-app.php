@@ -118,13 +118,18 @@ function ADDNewNoteToFile($title, $content, $type, $favoris) {
  * @return bool 
  */
 function DELETENoteFile($file) {
-    if(file_exists($file))
-        $st = unlink($file);
-    else
-        $st = false;
-
-    return $st;
+    
+    if (file_exists($file)) {
+        if (unlink($file)) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 }
+
 
 /**
  * Charger le contenu d'une note au départ du fichier passé en paramètre
