@@ -2,9 +2,10 @@
 
 // Constantes génériques de l'application
 const APP_NAME = 'ExtraNote';
-const APP_TITLE = 'ExtraNote - Gestionnaire de notes';
+const APP_TITLE = 'Gestionnaire de notes';
 const APP_VERSION = '1.0.0';
 const APP_DATE_UPDATE = '21/05/2024 16:25';
+const APP_AUTEUR = 'Açelya Lejeune';
 
 // Constante du répertoire de stockage des notes
 const NOTES_DIR = 'notes';
