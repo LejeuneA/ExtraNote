@@ -44,7 +44,7 @@ function HTMLInsertBanner()
     $banner = '<!-- Banner -->
     <div class="row">
             <div class="col-12 text-center">      
-            <h1><img src="assets/img/banner.png" class="img-fluid" alt="Logo Extra Note">ExtraNote</h1>
+            <a href="index.php"><h1>ExtraNote</h1></a>
             </div>
         </div>        
     ';
@@ -64,8 +64,8 @@ function HTMLInsertMenu()
     $navigation = '
 
         <div class="row">
-        <div class="col-12 text-center">      
-        x <a href="index.php">Home</a> X <a href="add-note.php?page=addnote">Ajouter</a> x
+        <div class="col-12 text-center d-flex align-items-center justify-content-center navbar">      
+        <a href="index.php">Home</a> <a href="add-note.php?page=addnote">Ajouter</a>
         </div>
         </div>        <hr>        
         ';
@@ -130,7 +130,7 @@ function HTMLDisplayNotes($sortedNotes)
                                 <div class="col-12">
                                     <?php echo $isFavoris; ?>
                                     <span class="badge text-bg-secondary"><?php echo $noteType; ?></span>
-                                    <h2 class="mb-3 appMainColor"><?php echo $noteTitle; ?></h2>
+                                    <h2 class="mb-3 noteTitle"><?php echo $noteTitle; ?></h2>
                                     <small><?php echo $noteDate; ?></small>
                                 </div>
                             </div>
@@ -255,10 +255,10 @@ function HTMLViewNote($note, $noteFile)
         <hr>
         <h6 class="mb-3 appMainColor"><span class=""><span class="badge"><?php echo htmlspecialchars($note['type']); ?></span></h6>
         <h6 class="mb-3 appMainColor"><span class=""><?php echo htmlspecialchars($note['date']); ?></span></h6>
-        <a href="edit-note.php?page=editnote&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-success btn-sm btn-note-delete" title="Modifier">Modifier</a>
+        <a href="edit-note.php?page=editnote&file=<?php echo urlencode($noteFile); ?>" class="btn btn-modify btn-note-delete" title="Modifier">Modifier</a>
 
         <!-- Link to delete confirmation page -->
-        <a href="confirm.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger btn-sm btn-note-delete" title="Supprimer">Supprimer</a>
+        <a href="confirm.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-delete btn-sm btn-note-delete" title="Supprimer">Supprimer</a>
     </div>
     <div class="col-1"></div>
     <div class="col-7 appViewNote">
@@ -303,8 +303,8 @@ function HTMLAddNewNoteForm()
             <textarea name="content_note" id="content_note" class="form-control" placeholder="Content" rows="10" required></textarea>
         </div>
         <input type="hidden" name="action" value="addnote">
-        <button type="submit" class="btn btn-outline-success">Ajouter</button>
-        <a href="index.php" class="btn btn-outline-danger">Annuler</a>
+        <button type="submit" class="btn btn-modify">Ajouter</button>
+        <a href="index.php" class="btn btn-delete">Annuler</a>
     </form>';
 }
 

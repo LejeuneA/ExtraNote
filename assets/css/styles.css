@@ -1,66 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
 
-:root{
-    --body-backg-color: rgb(254, 253, 247);
-    --body-color: rgb(51, 51, 51);
+:root {
+    --body-backg-color: rgb(34, 40, 49);
+    --body-color: rgb(238, 238, 238);
 
-    --a-color: rgb(28, 172, 50);
-    --a-color-hover: rgb(4, 49, 68);
+    --a-color: rgb(0, 122, 204);
+    --a-color-hover: rgb(0, 71, 102);
 
-    --h2-hover: rgb(223, 253, 225);
+    --h2-hover: rgb(225, 241, 253);
 
-    --apptitle-color: rgb(209, 246, 215);
-    --apptitle-border: rgb(112, 174, 116);
+    --apptitle-color: rgb(215, 234, 246);
+    --apptitle-border: rgb(116, 155, 174);
 
-    --shadow: rgba(39, 56, 77, 0.4);  
-    --shadow-deep: rgb(51, 51, 51); 
+    --shadow: rgba(39, 56, 77, 0.4);
+    --shadow-deep: rgb(51, 51, 51);
 
-    --appmain-color: rgb(25, 118, 31);
+    --appmain-color: rgb(118, 171, 174);
+    --appmain-color-hover: rgb(57, 94, 96);
 
-    --apptool-backg: rgb(204, 237, 208);
-    --apptool-border: rgb(28, 172, 50);
-    --apptool-backg-hover: rgb(127, 198, 138);
-    
+    --apptool-backg: rgb(208, 228, 237);
+    --apptool-border: rgb(0, 122, 204);
+    --apptool-backg-hover: rgb(138, 177, 198);
 
-    --form-group-backg: rgb(241, 254, 242);
-    --form-group-border: rgb(169, 238, 144);
+    --form-group-backg: rgb(242, 248, 254);
+    --form-group-border: rgb(144, 191, 238);
 
-    --focus-input-border: rgba(28, 172, 50, 0.6);
+    --focus-input-border: rgba(0, 122, 204, 0.6);
 
-    --danger-color: rgb(222, 49, 49);    
+    --danger-color: rgb(222, 49, 49);
 
-    --badge-color: rgb(25, 118, 31);
-    --badge-backg: rgb(209, 246, 215);
+    --badge-color: rgb(215, 234, 246);
+    --badge-backg: rgb(118, 171, 174);
 
-    --appNote-backg: rgb(247, 252, 236);
-    --appNote-border: rgb(134, 151, 128);  
-    --appNoteBox-hover: rgb(160, 220, 164); 
+    --appNote-backg: rgb(236, 247, 252);
+    --appNote-border: rgb(128, 134, 151);
+    --appNoteBox-hover: rgb(164, 197, 220);
 
-    --code-backg: rgb(237, 255, 199);  
-    --code-border: rgb(204, 217, 200); 
+    --code-backg: rgb(199, 225, 255);
+    --code-border: rgb(200, 209, 217);
     --form-Placeholder-color: rgb(182, 182, 182);
-
 }
+
 
 
 /* *********************** */
 /* --  Elements Rules  --  */
 /* *********************** */
 
-body {  
-  font-family: "Exo 2", sans-serif;
-  font-size: 1.1em;
-  background-color: var(--body-backg-color);
-  color: var(--body-color)
+body {
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.1em;
+    background-color: var(--body-backg-color);
+    color: var(--body-color)
 }
 
-a{
+a {
     color: var(--a-color);
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: var(--a-color-hover);
+}
+
+h1 {
+    color: var(--appmain-color);
+    padding: 0.5em;
+    font-weight: 700;
+    font-size: 3em;
 }
 
 h2 {
@@ -69,13 +76,13 @@ h2 {
 
 code {
     display: block;
-    font-size: 1.1rem;   
+    font-size: 1.1rem;
     color: var(--body-color);
     background-color: var(--code-backg);
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid var(--code-border);
-    border-radius: 5px;   
+    border-radius: 5px;
 }
 
 input:invalid {
@@ -84,7 +91,7 @@ input:invalid {
 
 small {
     font-size: 0.7rem;
-    color: var(--body-color);
+    color: var(--appmain-color-hover);
 }
 
 ::placeholder {
@@ -95,10 +102,49 @@ small {
 /* *********************** */
 /* -- Application Rules -- */
 /* *********************** */
+.btn-modify{
+    color: var(--appmain-color);
+    background-color: var(--appNote-backg);
+    border: 1px solid var(--appmain-color);
+    padding: 0.3em 1em;
+    font-size: medium;
+}
+
+.btn-modify:hover{
+    color: var(--body-color);
+    background-color: var(--appmain-color);
+}
+
+.btn-delete{
+    color: var(--danger-color);
+    background-color: var(--appNote-backg);
+    border: 1px solid var(--danger-color);
+    padding: 0.3em 1em;
+    font-size: medium;
+}
+
+.btn-delete:hover{
+    color: var(--body-color);
+    background-color: var(--danger-color);
+}
+
+.navbar a {
+    color: var(--body-color);
+    padding: 0.5em 2em;
+    background-color: var(--appmain-color-hover);
+    font-weight: 500;
+    margin: 0 0.3em;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: var(--body-color);
+    background-color: var(--appmain-color);
+}
 
 .appTitle {
     color: var(--apptitle-color);
-    background: linear-gradient(0.30turn, rgb(125, 249, 120), rgb(25, 118, 31), rgb(119, 255, 126)); 
+    background: linear-gradient(0.30turn, rgb(120, 178, 249), rgb(31, 67, 118)), rgb(126, 204, 255);
     margin-top: 20px;
     padding: 20px;
     font-size: 5rem;
@@ -109,28 +155,28 @@ small {
 }
 
 .appFooter {
-    margin: 25px 0 25px 0;    
+    margin: 25px 0 25px 0;
 }
 
-.appMainColor{
- color: var(--appmain-color);
+.appMainColor {
+    color: var(--appmain-color);
 }
 
-.appLabel{
+.appLabel {
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--appmain-color);
 }
 
-.appPageTitle{
+.appPageTitle {
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--appmain-color);
 }
 
 .appNoteBox {
- display: inline-block;
- margin: 15px;
+    display: inline-block;
+    margin: 15px;
 }
 
 .tuileNote {
@@ -144,25 +190,26 @@ small {
     border-radius: 5px;
 }
 
-.tuileNote:hover, .tuileNote-mini:hover {
+.tuileNote:hover,
+.tuileNote-mini:hover {
     background-color: var(--appNoteBox-hover);
-    color: var(--body-color);
+    color: var(--appmain-color-hover);
 }
 
 .tuileNote-mini {
     font-size: 1.0rem;
     color: var(--appmain-color);
     background-color: var(--appNote-backg);
-    margin-bottom: 10px;  
-    padding: 0; 
+    margin-bottom: 10px;
+    padding: 0;
     border: 1px solid var(--appNote-border);
     border-radius: 5px;
 }
 
 .appViewNote {
-    font-size: 1.1rem;    
+    font-size: 1.1rem;
     color: var(--appmain-color);
-    background-color: var(--appNote-backg);    
+    background-color: var(--appNote-backg);
     padding: 10px;
     border: 1px solid var(--appNote-border);
     border-radius: 5px;
@@ -175,13 +222,13 @@ small {
 
 
 .btn-note-delete {
-    --bs-btn-padding-y: .25rem; 
-    --bs-btn-padding-x: .5rem; 
+    --bs-btn-padding-y: .25rem;
+    --bs-btn-padding-x: .5rem;
     --bs-btn-font-size: .75rem;
 }
 
 .section_note {
-    background-image: url("../img/section.png");    
+    background-image: url("../img/section.png");
 }
 
 .infoFooter {
@@ -190,7 +237,7 @@ small {
 }
 
 .termSearch {
-    color: var(--danger-color);    
+    color: var(--danger-color);
 }
 
 
@@ -199,56 +246,57 @@ small {
 /* --    Forms  Rules   -- */
 /* *********************** */
 
-.input_wrapper { 
-    position: relative; 
-    display: inline-block; 
-} 
+.input_wrapper {
+    position: relative;
+    display: inline-block;
+}
 
-.input_wrapper input { 
-    padding-right: 40px; 
-} 
+.input_wrapper input {
+    padding-right: 40px;
+}
 
-.input_wrapper button { 
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    border: none; 
-    background-color: transparent; 
-    cursor: pointer; 
-} 
+.input_wrapper button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 
 .label_sort_note {
     font-size: 0.8rem;
 }
 
-.select_sort_note, .select_sort_order, .input_search_note {
-    font-size: 0.8rem; 
-    background-color: var(--appNote-backg); 
-    border: 1px solid var(--appNote-border); 
-    border-radius: 5px; 
+.select_sort_note,
+.select_sort_order,
+.input_search_note {
+    font-size: 0.8rem;
+    background-color: var(--appNote-backg);
+    border: 1px solid var(--appNote-border);
+    border-radius: 5px;
 }
 
 .input_search_note:focus {
     border-color: var(--focus-input-border);
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.075) inset, 0 0 8px  var(--focus-input-border);
-    outline: 0 none;    
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--focus-input-border);
+    outline: 0 none;
 }
 
 
 .btn_submit_search {
-    font-size: 0.8rem;     
-    color: var(--appmain-color); 
-    padding: 0.25rem 0.5rem;     
+    font-size: 0.8rem;
+    color: var(--appmain-color);
+    padding: 0.25rem 0.5rem;
 }
 
 
 .form-select:focus,
 .form-control:focus,
-input[type=checkbox]:focus
-{   
-  border-color: var(--focus-input-border) !important;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.075) inset, 0 0 8px  var(--focus-input-border);
-  outline: 0 none;
+input[type=checkbox]:focus {
+    border-color: var(--focus-input-border) !important;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--focus-input-border);
+    outline: 0 none;
 }
 
 .form-check-input:checked {
@@ -265,35 +313,39 @@ input[type=checkbox]:focus
     box-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%), 0 3px 7px -3px rgb(0 0 0 / 30%);
 }
 
+.form-group label{
+    color: var(--appmain-color-hover);
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 996;
-  background: #149ddd;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  transition: all 0.4s;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: var(--appmain-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
 }
 
 .back-to-top i {
-  font-size: 28px;
-  color: #fff;
-  line-height: 0;
+    font-size: 28px;
+    color: var(--body-color);
+    line-height: 0;
 }
 
 .back-to-top:hover {
-  background: #2eafec;
-  color: #fff;
+    background-color: var(--appmain-color-hover);
+    color: var(--body-color);
 }
 
 .back-to-top.active {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
