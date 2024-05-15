@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
     <?php echo HTMLInsertFooter(); ?>
 
     <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/tooltips.js"></script>
 </body>

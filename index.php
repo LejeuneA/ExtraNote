@@ -57,7 +57,15 @@ $favoritedNotes = array_filter($sortedNotes, function ($note) {
     <!-- Footer -->
     <?php echo HTMLInsertFooter(); ?>
 
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center" id="backToTop"><i class="fa fa-arrow-up"></i></a>
+
+    
+    <!-- Font Awesome JS -->
+	<script src="https://kit.fontawesome.com/3546d47201.js" crossorigin="anonymous"></script>
+    
+    
     <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/tooltips.js"></script>
 </body>
