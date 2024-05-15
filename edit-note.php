@@ -73,47 +73,8 @@ if (!$note) {
         <!-- Menu -->
         <?php echo HTMLInsertMenu(); ?>
 
-        <div class="row">
-            <div class="col-12">
-                <h1 class="mb-3 appMainColor appPageTitle">Modifier la note</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <?php if(isset($success_message)) displaySuccessMessage($success_message); ?>
-                <?php if(isset($error_message)) echo '<div class="alert alert-danger" role="alert">' . $error_message . '</div>'; ?>
-                <!-- Edit Note Form -->
-                <form id="form_edit_note" action="edit-note.php" method="post">
-                    <div class="mb-3 form-group">
-                        <label for="title_note" class="form-label appLabel">Titre</label>
-                        <input type="text" class="form-control" name="title_note" id="title_note" value="<?php echo htmlspecialchars($note['title']); ?>" required>
-                    </div>
-                    <div class="mb-3 form-group">
-                        <label for="type_note" class="form-label appLabel">Type</label>
-                        <select name="type_note" id="type_note" class="form-control" required>
-                            <option value="note" <?php echo ($note['type'] === 'note') ? 'selected' : ''; ?>>Note textuelle</option>
-                            <option value="code" <?php echo ($note['type'] === 'code') ? 'selected' : ''; ?>>Code Source</option>
-                            <option value="lien" <?php echo ($note['type'] === 'lien') ? 'selected' : ''; ?>>Lien / Url</option>
-                        </select>
-                    </div>
-                    <div class="mb-3 form-group">
-                        <input class="form-check-input" type="checkbox" value="1" id="favori_note" name="favori_note" <?php echo ($note['favoris'] == 1) ? 'checked' : ''; ?>>
-                        <label class="form-check-label" for="favori_note">Ajouter aux favoris</label>
-                    </div>
-                    <div class="mb-3 form-group">
-                        <label for="content_note" class="form-label appLabel">Contenu</label>
-                        <textarea name="content_note" id="content_note" class="form-control" rows="10" required><?php echo htmlspecialchars($note['content']); ?></textarea>
-                    </div>
-                    <!-- Hidden fields to pass note data -->
-                    <input type="hidden" name="action" value="recordnote">
-                    <input type="hidden" name="file_note" value="<?php echo htmlspecialchars($noteFile); ?>">
-                    <input type="hidden" name="date_note" value="<?php echo htmlspecialchars($note['date']); ?>">
-                    <!-- Submit and cancel buttons -->
-                    <button type="submit" class="btn btn-outline-success">Modifier</button>
-                    <a href="index.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger">Annuler</a>
-                </form>
-            </div>
-        </div>
+        <!-- Edit notes -->
+        <?php echo HTMLEditNote($note, $noteFile, $successMessage = null, $errorMessage = null); ?>
     </div><!-- container -->
 
     <!-- Footer -->

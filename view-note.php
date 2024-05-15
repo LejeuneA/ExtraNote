@@ -35,22 +35,7 @@ if (!$note) {
 
         <!-- Affichage des notes -->
         <div class="row">               
-            <div class="col-4 appViewNote">                    
-                <h1 class="mb-3 appMainColor appPageTitle"><?php echo htmlspecialchars($note['title']); ?></h1>  
-                <hr>
-                <h6 class="mb-3 appMainColor"><span class=""><span class="badge"><?php echo htmlspecialchars($note['type']); ?></span></h6> 
-                <h6 class="mb-3 appMainColor"><span class=""><?php echo htmlspecialchars($note['date']); ?></span></h6>
-                <a href="edit-note.php?page=editnote&file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-success btn-sm btn-note-delete" title="Modifier">Modifier</a>
-
-                <!-- Link to delete confirmation page -->
-                <a href="confirm.php?file=<?php echo urlencode($noteFile); ?>" class="btn btn-outline-danger btn-sm btn-note-delete" title="Supprimer">Supprimer</a>
-            </div>   
-            <div class="col-1"></div> 
-            <div class="col-7 appViewNote">                     
-                <div>
-                    <?php echo nl2br(htmlspecialchars($note['content'])); ?>
-                </div>
-            </div>              
+            <?php echo HTMLViewNote($note, $noteFile); ?>
         </div>
     </div><!-- container -->
 
