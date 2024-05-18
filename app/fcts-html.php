@@ -226,7 +226,7 @@ function HTMLDisplayFavoriteNotes($favoritedNotes)
                     <div class="row tuileNote-mini" alt="Lire">
                         <div class="col-12">
                             <span class="badge text-bg-secondary"><?php echo $note['type']; ?></span>
-                            <h2 class="mb-3 appMainColor"><?php echo $note['title']; ?></h2>
+                            <h2 class="mb-3"><?php echo $note['title']; ?></h2>
                         </div>
                     </div>
                 </a>
