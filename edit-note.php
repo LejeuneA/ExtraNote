@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
     $content = $_POST['content_note'];
     $type = $_POST['type_note'];
     $favoris = isset($_POST['favori_note']) ? $_POST['favori_note'] : 0;
-    $file_note = $_POST['file_note']; // File to be updated
+    $file_note = $_POST['file_note']; 
     $date_note = $_POST['date_note'];
 
     // Update the note data
